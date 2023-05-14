@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="menu_test_module_root"
+                name="TestModule"
+                sequence="0"/>
+
+    <menuitem id="menu_test_module_master"
+                name="TestModule Details"
+                parent="menu_test_module_root"
+                sequence="10"/>
+    <menuitem id="menu_test_module_child"
+                name="TestModule Details Child"
+                parent="menu_test_module_master"
+                sequence="20"/>
+</odoo>
