@@ -305,6 +305,11 @@ class IrModel(models.Model):
         # delete fields whose comodel is being removed
         self.env['ir.model.fields'].search([('relation', 'in', self.mapped('model'))]).unlink()
 
+        # delete ir_crons created by user
+        crons = self.env['ir.cron'].with_context(active_test=False).search([('model_id', 'in', self.ids)])
+        if crons:
+            crons.unlink()
+
         self._drop_table()
         res = super(IrModel, self).unlink()
 
@@ -649,6 +654,8 @@ class IrModelFields(models.Model):
                 names = seq.strip().split(".")
                 last = len(names) - 1
                 for index, name in enumerate(names):
+                    if name == 'id':
+                        raise UserError(_("Compute method cannot depend on field 'id'"))
                     field = model._fields.get(name)
                     if field is None:
                         raise UserError(_("Unknown field %r in dependency %r") % (name, seq.strip()))
@@ -784,7 +791,8 @@ class IrModelFields(models.Model):
                     if inverse.manual and inverse.type == 'one2many':
                         failed_dependencies.append((field, inverse))
 
-        if not self._context.get(MODULE_UNINSTALL_FLAG) and failed_dependencies:
+        uninstalling = self._context.get(MODULE_UNINSTALL_FLAG)
+        if not uninstalling and failed_dependencies:
             msg = _("The field '%s' cannot be removed because the field '%s' depends on it.")
             raise UserError(msg % failed_dependencies[0])
         elif failed_dependencies:
@@ -800,8 +808,10 @@ class IrModelFields(models.Model):
         # DLE P16: if there are pending updates of the field we currently try to unlink, pop them out from the cache
         # test `test_unlink_with_dependant`
         for record in self:
-            field = self.pool[record.model]._fields[record.name]
-            self.env.cache.clear_dirty_field(field)
+            model = self.env.get(record.model)
+            field = model and model._fields.get(record.name)
+            if field:
+                self.env.cache.clear_dirty_field(field)
         # remove fields from registry, and check that views are not broken
         fields = [self.env[record.model]._pop_field(record.name) for record in self]
         domain = expression.OR([('arch_db', 'like', record.name)] for record in self)
@@ -810,7 +820,7 @@ class IrModelFields(models.Model):
             for view in views:
                 view._check_xml()
         except Exception:
-            if not self._context.get(MODULE_UNINSTALL_FLAG):
+            if not uninstalling:
                 raise UserError("\n".join([
                     _("Cannot rename/delete fields that are still present in views:"),
                     _("Fields: %s") % ", ".join(str(f) for f in fields),
@@ -822,8 +832,9 @@ class IrModelFields(models.Model):
                         + ", ".join(str(f) for f in fields)
                         + " the following view might be broken %s" % view.name)
         finally:
-            # the registry has been modified, restore it
-            self.pool.setup_models(self._cr)
+            if not uninstalling:
+                # the registry has been modified, restore it
+                self.pool.setup_models(self._cr)
 
     @api.ondelete(at_uninstall=False)
     def _unlink_if_manual(self):

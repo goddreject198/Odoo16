@@ -46,6 +46,12 @@ msgid ""
 "                </p>\n"
 "            "
 msgstr ""
+"\n"
+"<p class=\"o_view_nocontent_smiling_face\">\n"
+"Nie znaleziono kamieni milowych. Stwórzmy jeden!\n"
+"</p><p>\n"
+"Śledź główne punkty postępu, które muszą zostać osiągnięte, aby osiągnąć sukces.\n"
+"</p>"
 
 #. module: sale_project
 #. odoo-python
@@ -725,7 +731,7 @@ msgstr "Śledzenie usługi"
 #. module: sale_project
 #: model:ir.model.fields,field_description:sale_project.field_project_project__vendor_bill_count
 msgid "Vendor Bill Count"
-msgstr ""
+msgstr "Liczba rachunków sprzedawcy"
 
 #. module: sale_project
 #. odoo-python

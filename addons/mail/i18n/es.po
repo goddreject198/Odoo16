@@ -15,17 +15,20 @@
 # Martin Trigaux, 2022
 # Óscar Fonseca <tecnico@extreme-micro.com>, 2023
 # David Ramia, 2023
+# Antoine Demany, 2023
+# Daniel Blanco <daniel@blancomartin.cl>, 2023
 # Camille Dantinne <cmd@odoo.com>, 2023
 # Pedro M. Baeza <pedro.baeza@tecnativa.com>, 2023
-# Antoine Demany, 2023
+# Fernanda Alvarez, 2023
+# Iran Villalobos López, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-14 05:51+0000\n"
+"POT-Creation-Date: 2023-05-23 08:22+0000\n"
 "PO-Revision-Date: 2022-09-22 05:53+0000\n"
-"Last-Translator: Antoine Demany, 2023\n"
+"Last-Translator: Iran Villalobos López, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/odoo/teams/41243/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1581,7 +1584,7 @@ msgstr "Adjuntar un archivo"
 #: code:addons/mail/static/src/components/attachment_box/attachment_box.xml:0
 #, python-format
 msgid "Attach files"
-msgstr ""
+msgstr "Adjuntar archivos"
 
 #. module: mail
 #: model:ir.model,name:mail.model_ir_attachment
@@ -1820,22 +1823,22 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_res_users__is_blacklisted
 #: model_terms:ir.ui.view,arch_db:mail.mail_blacklist_view_form
 msgid "Blacklist"
-msgstr "Lista negra"
+msgstr "Lista de denegación"
 
 #. module: mail
 #: model_terms:ir.ui.view,arch_db:mail.mail_blacklist_view_tree
 msgid "Blacklist Date"
-msgstr "Fecha de lista negra "
+msgstr "Fecha de alta"
 
 #. module: mail
 #: model:ir.model.fields.selection,name:mail.selection__mail_mail__failure_type__mail_bl
 msgid "Blacklisted Address"
-msgstr "Direcciones incluidas en la lista negra"
+msgstr "Direcciones incluidas en la lista de denegación"
 
 #. module: mail
 #: model:ir.actions.act_window,name:mail.mail_blacklist_action
 msgid "Blacklisted Email Addresses"
-msgstr "Direcciones de correo electrónico incluidas en la lista negra"
+msgstr "Direcciones de correo electrónico incluidas en la lista de denegación"
 
 #. module: mail
 #. odoo-python
@@ -3345,7 +3348,7 @@ msgstr "Editar suscripción de"
 #: code:addons/mail/static/src/components/follower/follower.xml:0
 #, python-format
 msgid "Edit subscription"
-msgstr "Editar subscripción"
+msgstr "Editar suscripción"
 
 #. module: mail
 #. odoo-javascript
@@ -4081,13 +4084,6 @@ msgid "Gmail Credentials"
 msgstr ""
 
 #. module: mail
-#. odoo-python
-#: code:addons/mail/models/res_users.py:0
-#, python-format
-msgid "Go to the configuration panel"
-msgstr "Ir al panel de configuración"
-
-#. module: mail
 #: model:ir.model.fields.selection,name:mail.selection__mail_channel__channel_type__group
 msgid "Group"
 msgstr "Grupo"
@@ -4541,8 +4537,8 @@ msgid ""
 "If the email address is on the blacklist, the contact won't receive mass "
 "mailing anymore, from any list"
 msgstr ""
-"Si la dirección de email esta en la lista negra, el contacto ya no recibirá "
-"correo masivo de cualquier lista."
+"Si la dirección de correo electrónico esta en la lista de denegación, el "
+"contacto ya no recibirá correo masivo de cualquier lista."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_mail__reply_to_force_new
@@ -5810,6 +5806,13 @@ msgstr "Marcar 'Por realizar'"
 #, python-format
 msgid "Mark as done"
 msgstr "Marcar como hecho"
+
+#. module: mail
+#. odoo-javascript
+#: code:addons/mail/static/src/models/call_settings_menu.js:0
+#, python-format
+msgid "Media devices unobtainable"
+msgstr ""
 
 #. module: mail
 #: model:mail.activity.type,name:mail.mail_activity_data_meeting
@@ -7185,9 +7188,9 @@ msgid ""
 " named. For example on a project, the parent_id of project subtypes refers "
 "to task-related subtypes."
 msgstr ""
-"Subtipo padre, utilizado para la subscripción automática. Este campo no esta"
-" correctamente nombrado. Por ejemplo en un proyecto, el parent_id del "
-"subtipo de proyecto se refiere a los subtipos de tareas relacionadas."
+"Subtipo padre, utilizado para la suscripción automática. Este campo no esta "
+"correctamente nombrado. Por ejemplo en un proyecto, el parent_id del subtipo"
+" de proyecto se refiere a los subtipos de tareas relacionadas."
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_channel_rtc_session__partner_id
@@ -8060,16 +8063,16 @@ msgid "SSL"
 msgstr "SSL"
 
 #. module: mail
-#: model:ir.model.fields,field_description:mail.field_fetchmail_server__is_ssl
-msgid "SSL/TLS"
-msgstr "SSL/TLS"
-
-#. module: mail
 #. odoo-javascript
 #: code:addons/mail/static/src/models/call_settings_menu.js:0
 #, python-format
 msgid "SSL might not be set up properly"
 msgstr ""
+
+#. module: mail
+#: model:ir.model.fields,field_description:mail.field_fetchmail_server__is_ssl
+msgid "SSL/TLS"
+msgstr "SSL/TLS"
 
 #. module: mail
 #. odoo-javascript
@@ -8936,7 +8939,7 @@ msgstr ""
 #: code:addons/mail/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "T-shirt"
-msgstr ""
+msgstr "Camisetas"
 
 #. module: mail
 #. odoo-javascript
@@ -9348,8 +9351,8 @@ msgstr "Esta acción enviará un correo electrónico."
 #: model_terms:ir.ui.view,arch_db:mail.res_partner_view_form_inherit_mail
 msgid "This email is blacklisted for mass mailings. Click to unblacklist."
 msgstr ""
-"Este correo electrónico está en la lista negra para envíos masivos. Haga "
-"clic para eliminar la lista negra."
+"Este correo electrónico está en la lista de denegación para envíos masivos. "
+"Haga clic para eliminarlo de ella."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_blacklist__email
@@ -10428,17 +10431,6 @@ msgstr "Solo puede abrir el perfil de los canales existentes."
 #, python-format
 msgid "You can only open the profile of existing users."
 msgstr "Solo puede abrir el perfil de usuarios existentes."
-
-#. module: mail
-#. odoo-python
-#: code:addons/mail/models/res_users.py:0
-#, python-format
-msgid ""
-"You cannot create a new user from here.\n"
-" To create new user please go to configuration panel."
-msgstr ""
-"No puede crear un nuevo usuario desde aquí.\n"
-"Para crear un nuevo usuario, vaya al panel de configuración"
 
 #. module: mail
 #. odoo-python
@@ -17191,7 +17183,7 @@ msgstr ""
 #: code:addons/mail/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "entry"
-msgstr ""
+msgstr "asiento"
 
 #. module: mail
 #. odoo-javascript
@@ -24136,13 +24128,6 @@ msgstr ""
 #: code:addons/mail/static/src/models_data/emoji_data.js:0
 #, python-format
 msgid "medal"
-msgstr ""
-
-#. module: mail
-#. odoo-javascript
-#: code:addons/mail/static/src/models/call_settings_menu.js:0
-#, python-format
-msgid "Media devices unobtainable"
 msgstr ""
 
 #. module: mail

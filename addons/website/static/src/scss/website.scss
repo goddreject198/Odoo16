@@ -890,6 +890,12 @@ header {
         max-height: 80vh;
         overflow-y: auto;
         overflow-x: hidden; // Needed because of container in container having 0px padding... TODO improve
+
+        @include media-breakpoint-down(lg) {
+            .nav-link, .dropdown-item {
+                white-space: normal;
+            }
+        }
     }
 
     &:not(.o_header_is_scrolled) {
@@ -1226,6 +1232,7 @@ header {
     border-radius: 0;
     background-clip: unset; // Remove the 1px gap introduced by BS4
     background-color: transparent; // In order to allow the mega menu to be transparent
+    border: 1px solid $gray-200; // Prevent to see the color of the block behind.
 
     .container, .container-fluid {
         // Need to reforce those because they are removed since its a container

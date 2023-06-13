@@ -5,8 +5,8 @@
 # Translators:
 # Yenthe Van Ginneken <yenthespam@gmail.com>, 2022
 # Gunther Clauwaert <gclauwae@hotmail.com>, 2022
-# Erwin van der Ploeg <erwin@odooexperts.nl>, 2023
 # Martin Trigaux, 2023
+# Erwin van der Ploeg <erwin@odooexperts.nl>, 2023
 # Jolien De Paepe, 2023
 # 
 msgid ""
@@ -3847,7 +3847,7 @@ msgstr "Overige"
 #: code:addons/web/static/src/views/fields/pdf_viewer/pdf_viewer_field.js:0
 #, python-format
 msgid "PDF Viewer"
-msgstr "PDF bekijker"
+msgstr "PDF Viewer"
 
 #. module: web
 #. odoo-javascript
@@ -5473,8 +5473,8 @@ msgid ""
 "Try to add some records, or make sure that there is no\n"
 "                    active filter in the search bar."
 msgstr ""
-"Probeer enkele records toe te voegen, of zorg ervoor dat er geen\n"
-"                    actieve filter in de zoekbalk."
+"Probeer eens een paar records toe te voegen, of zorg ervoor dat er geen\n"
+"                   filter in de zoekbalk is ingesteld."
 
 #. module: web
 #. odoo-javascript
